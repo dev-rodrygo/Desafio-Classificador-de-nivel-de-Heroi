@@ -3,7 +3,7 @@ let NivelDoHeroi;
 
 for (let i = 0; i < 10; i++) {
     let heroi = prompt('Qual nome do herói?')
-    let xp = Number(prompt('Qual xp do heŕoi?'))
+    let xp = Number(prompt('Qual Experiencia(XP) do heŕoi?'))
     i++
     if (xp <= 1000) {
         NivelDoHeroi = "Ferro"
@@ -37,9 +37,7 @@ for (let i = 0; i < 10; i++) {
         NivelDoHeroi = "Radiante"
     }
     console.log(`O Herói de nome ${heroi} está no nível de ${NivelDoHeroi}!`)
-    let powerXp = Number(prompt("Quanto de BOOST o herói vai receber:"))
-    let powerFinal = xp + powerXp
-    console.log(`XP do herói ${heroi} com BOOST: ${powerFinal}`)
+   
 }
 
 
