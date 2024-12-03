@@ -1,44 +1,34 @@
+//Adiciona o pacote do prompt-sync
 const prompt = require('prompt-sync')()
-let NivelDoHeroi;
 
-for (let i = 0; i < 10; i++) {
-    let heroi = prompt('Qual nome do herói?')
-    let xp = Number(prompt('Qual Experiencia(XP) do heŕoi?'))
-    i++
-    if (xp <= 1000) {
-        NivelDoHeroi = "Ferro"
-    }
-    else if (xp > 1001 && xp <= 2000) {
-        NivelDoHeroi = "Bronze"
+//// Laço de repetição para obter nome e experiencia do heroi
+for (let index = 0; index < 10; index++) {
 
-    }
-    else if (xp > 2000 && xp <= 5000) {
-        NivelDoHeroi = "Prata"
-
-    }
-    else if (xp > 5000 && xp <= 7000) {
-        NivelDoHeroi = "Ouro"
-
-    }
-    else if (xp > 7000 && xp <= 8000) {
-        NivelDoHeroi = "Platina"
-
-    }
-
-    else if (xp > 8000 && xp <= 9000) {
-        NivelDoHeroi = "Ascendente"
-
+    const nameHero = prompt('Nome do Herói: ')
+    const heroExperience = prompt('Experiencia do Herói:')
+    
+    // Função para calcular o nível com base na experiência
+    function calculeteLevel(xp) {
+        // Objeto que mapeia os intervalos de experiência para os níveis correspondentes
+        const level = {
+            Ferro: { min: 0, max: 1000 },
+            Bronze: { min: 1001, max: 2000 },
+            Prata: { min: 2001, max: 5000 },
+            Ouro: { min: 5001, max: 7000 },
+            Platina: { min: 7001, max: 8000 },
+            Ascendente: { min: 8001, max: 9000 },
+            Imortal: { min: 9001, max: 10000 },
+            Radiante: { min: 10001, max: Infinity },
+        }
+    
+        // Itera sobre os níveis e verifica em qual intervalo de experiência o valor se encaixa
+        for (let levelHero in level) {
+            if (xp >= level[levelHero].min && xp <= level[levelHero].max) {
+                return levelHero
+            }
+        }
     }
 
-    else if (xp > 9000 && xp < 10000) {
-        NivelDoHeroi = "Imortal"
-    }
-    else if (xp > 1000) {
-        NivelDoHeroi = "Radiante"
-    }
-    console.log(`O Herói de nome ${heroi} está no nível de ${NivelDoHeroi}!`)
-   
+    let level = calculeteLevel(heroExperience)
+    console.log(`O Herói ${nameHero} está no nível de ${level}!`)
 }
-
-
-
