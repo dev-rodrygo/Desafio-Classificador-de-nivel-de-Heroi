@@ -30,7 +30,7 @@ for (let index = 0; index < 10; index++) {
     }
 
     let level = calculeteLevel(heroExperience)
-    console.log(`O Herói ${nameHero} está no nível de ${level}!`)
+    console.log(`O Herói ${nameHero} está no nível de ${level}`)
 
-    //testando o repositorio remoto com git pull
+   
 }
